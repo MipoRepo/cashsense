@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASHSENSE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-mark">S</div>
+      <div class="brand-titles">
+        <h1>CashSENSE</h1>
+        <div class="sub-header">Capital Intelligence</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item active">Kassaennuste</a>
+      <a href="project.html" class="nav-item">Projekti</a>
+      <button class="btn btn-primary-gold nav-btn-pdf">Lataa Ennuste (PDF)</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main>
+  <div class="container">
+
+  <!-- Hero Image Banner -->
+  <section class="hero-banner-container">
+    <img src="logo.jpg" alt="CashSENSE Hero Banner" class="hero-banner-img">
+  </section>
+
+    <!-- Hero & Executive Summary Section -->
+    <section class="card highlight-gold hero-highlight-card">
+      <div class="hero-highlight-card-content">
+        <div class="sub-header">Mitä CashSENSE On?</div>
+        <h3>
+          Mullistava Kassaennuste &amp; Pääoman Älyalusta</h3>
+        <strong>Tulevaisuuden päätöksentekoa -tulevaisuuden yrityksille.</strong><br><br>
+
+        <p>
+          <strong>CashSENSE</strong> on tekoälypohjainen RaaS (Reporting-as-a-Service) -ratkaisu, joka yhdistää yrityksesi reaaliaikaisen reskontradatan, historiallisen maksukäyttäytymisen sekä <strong>Tilastokeskuksen makrotaloudelliset indikaattorit</strong>. Pelkän perinteisen eräpäivien tarkastelun sijaan CashSENSE ennakoi suhdannemuutokset ja laskee tarkat maksuviiverikit ennen kuin ne vaikuttavat maksukykyysi.
+        </p>
+
+        <p>
+          <strong>CashSENSE RaaS-malli</strong> tarkoittaa, ettei yrityksesi maksa kalliista ohjelmistolisensseista, vaan ainoastaan valmiista, arvoa tuottavista kassavirtaennusteista ja analyyseistä.
+        </p>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <span class="feature-icon-gold">✦</span> Makrotaloudellinen StatFin-integraatio
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon-green">✦</span>Ennakoiva maksukäyttäymis analyysi ja riskien hallinta
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon-gold">✦</span> Tulospohjainen RaaS-mittauspalvelu
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Title Section -->
+    <section class="page-title-section">
+      <div class="sub-header">RaaS Predictive Engine v2.4</div>
+      <h2>Kassavirta & Makrotaloudellinen Ennustemalli</h2>
+    </section>
+
+    <!-- Key Performance Indicators (KPI Grid) -->
+    <div class="kpi-grid">
+      <div class="card highlight-gold">
+        <div class="stat-label">RaaS Ennustetarkkuus (30pv)</div>
+        <div class="stat-value">94.2 %</div>
+        <span class="stat-badge badge-gold">✓ RaaS-palkkiokynnys saavutettu (&gt;90%)</span>
+      </div>
+
+      <div class="card highlight-emerald">
+        <div class="stat-label">Seuraava Kassan Pohjakosketus</div>
+        <div class="stat-value">14.10.2026</div>
+        <span class="stat-badge badge-emerald">Ennustettu alin kassa: +42 500 €</span>
+      </div>
+
+      <div class="card">
+        <div class="stat-label">Väytetyt Rahoituskulut (Arvio)</div>
+        <div class="stat-value">2 400 €</div>
+        <span class="stat-badge badge-emerald">Ennakoitu maksuviivearva</span>
+      </div>
+
+      <div class="card">
+        <div class="stat-label">Toimialan Suhdanne (StatFin)</div>
+        <div class="stat-value">- 6.4 %</div>
+        <span class="stat-badge status-risk">Laskeva trendi (Rakentaminen)</span>
+      </div>
+    </div>
+
+    <!-- Main Content Dashboard Grid -->
+    <section class="dashboard-grid">
+
+      <!-- Chart Area Card -->
+      <div class="card">
+        <div class="card-title">
+          <span>Rullaava Kassavirtaennuste (30 päivää)</span>
+          <span class="text-subtle">Päivitetty tänään 18:40</span>
+        </div>
+        <div class="chart-container">
+          <svg class="chart-mock-svg" viewBox="0 0 600 240">
+            <!-- Grid Lines -->
+            <line x1="0" y1="40" x2="600" y2="40" stroke="#E2E8F0" stroke-dasharray="4" />
+            <line x1="0" y1="100" x2="600" y2="100" stroke="#E2E8F0" stroke-dasharray="4" />
+            <line x1="0" y1="160" x2="600" y2="160" stroke="#E2E8F0" stroke-dasharray="4" />
+            <line x1="0" y1="220" x2="600" y2="220" stroke="#CBD5E1" />
+
+            <!-- Baseline Standard Forecast (Grey Dashed) -->
+            <path d="M0,80 Q150,40 300,70 T600,30" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6" />
+
+            <!-- AI + Macro Adjusted Forecast (Sold Emerald & Gold gradient effect) -->
+            <path d="M0,80 Q150,90 300,120 T600,90" fill="none" stroke="#059669" stroke-width="3.5" />
+
+            <!-- Fill Area showing identified Risk -->
+            <path d="M0,80 Q150,40 300,70 T600,30 L600,90 Q450,120 300,120 Q150,90 0,80 Z" fill="rgba(220, 38, 38, 0.08)" />
+
+            <!-- Highlight Dots -->
+            <circle cx="300" cy="120" r="6" fill="#D4AF37" stroke="#FFFFFF" stroke-width="2" />
+            <text x="310" y="115" font-family="Inter" font-size="11" font-weight="600" fill="#0F172A">Kassavajan riski (-18 500 €)</text>
+          </svg>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <span class="legend-swatch legend-swatch--grey"></span>
+            <span>Standardi kirjanpitoennuste (Laskujen eräpäivät)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-swatch legend-swatch--green"></span>
+            <span class="legend-text--em">CashSENSE AI & Makro -korjattu ennuste</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Parameters Card -->
+      <div class="card">
+        <div class="card-title">Ennuste-parametrit</div>
+
+        <div class="form-group">
+          <label class="form-label">Toimiala (StatFin Macro API)</label>
+          <select class="form-select">
+            <option>TOL 41 Uudisrakentaminen (-6.4%)</option>
+            <option>TOL 62 Tietojenkäsittelypalvelu (+4.1%)</option>
+            <option>TOL 55 Majoitus ja ravitsemus (-1.2%)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Asiakaskohtainen Maksuviivekerroin</label>
+          <input type="range" min="0.8" max="1.5" step="0.05" value="1.2" class="form-range">
+          <div class="form-range-labels">
+            <span>Neutraali (1.0x)</span>
+            <span class="form-range-value">Suhdannekorjattu (1.20x)</span>
+          </div>
+        </div>
+
+        <div class="ai-insight-box">
+          <div class="sub-header ai-insight-label">Claude AI Havainto:</div>
+          <p class="ai-insight-text">
+            "Rakennusalan heikentynyt suhdanne pidentää avainasiakkaidesi maksuaikoja keskimäärin 12 päivällä. Varautumalla tähän vältät kassan alituksen 14.10."
+          </p>
+        </div>
+
+        <button class="btn btn-primary-gold form-action-btn">Päivitä Simulointi</button>
+      </div>
+
+    </section>
+
+    <!-- Table Section -->
+    <section class="card card--top-spacing">
+      <div class="card-title">Kriittiset Asiakasreskontrat & Ennustettu Maksuviive</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Asiakkaan Nimi</th>
+            <th>Toimiala</th>
+            <th>Eräpäivä</th>
+            <th>Laskun Summa</th>
+            <th>Historiallinen Viive</th>
+            <th>Suhdannekorjattu Maksupäivä</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-cell--emphasis">Nordic Construction Oy</td>
+            <td>Rakentaminen</td>
+            <td>02.10.2026</td>
+            <td>38 500 €</td>
+            <td>+ 6 pv</td>
+            <td class="table-cell--gold">18.10.2026 (+16 pv)</td>
+            <td><span class="stat-badge badge-gold">Viiveriski</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell--emphasis">CloudTech Solutions Oy</td>
+            <td>IT & Ohjelmistot</td>
+            <td>05.10.2026</td>
+            <td>14 200 €</td>
+            <td>+ 1 pv</td>
+            <td class="table-cell--emerald">06.10.2026 (+1 pv)</td>
+            <td><span class="stat-badge badge-emerald">Normaali</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell--emphasis">Suomen Logistics Ab</td>
+            <td>Kuljetus</td>
+            <td>10.10.2026</td>
+            <td>22 100 €</td>
+            <td>+ 4 pv</td>
+            <td class="table-cell--emphasis">18.10.2026 (+8 pv)</td>
+            <td><span class="stat-badge badge-gold">Kohtalainen</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>CashSENSE ™ – Capital Intelligence &copy; 2026 Mikko Pohjola. All rights reserved. Demonstration use only.</p>
+  </footer>
+
+</body>
+</html>

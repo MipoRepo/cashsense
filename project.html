@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASHSENSE – Projektisuunnitelma</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-mark">S</div>
+      <div class="brand-titles">
+        <h1>CashSENSE</h1>
+        <div class="sub-header">Capital Intelligence</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Kassaennuste</a>
+      <a href="project.html" class="nav-item active">Projekti</a>
+      <button class="btn btn-primary-gold nav-btn-pdf">Lataa Ennuste (PDF)</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main>
+  <div class="container">
+
+    <!-- Hero Image Banner -->
+    <section class="hero-banner-container">
+      <img src="logo.jpg" alt="CashSENSE Hero Banner" class="hero-banner-img">
+    </section>
+
+    <!-- Title Section -->
+    <section class="page-title-section">
+      <div class="sub-header">Dokumentaatio &amp; Arkkitehtuuri</div>
+      <h2>CashSENSE – Projektisuunnitelma</h2>
+    </section>
+
+    <!-- Overview Card -->
+    <section class="card highlight-gold hero-highlight-card hero-highlight-card--project">
+      <div class="hero-highlight-card-content">
+        <div class="sub-header">Behavioral &amp; Macro Cash Flow Analytics</div>
+        <h3>
+          Verkkosovellus pk-yritysten ennakoivaan kassavirta-analyysiin
+        </h3>
+        <p class="body-text">
+          CashSense on kokeellinen DEMO -verkkosovellus, joka tuottaa pk-yritykselle kassavirtaennusteen yhdistämällä laskutiedot, asiakkaiden historiallisen maksukäyttäytymisen ja toimialan makrotaloudellisen kehityksen. Projektin tavoitteena on rakentaa toimiva, jatkuvasti verkossa oleva demo
+          Azure VM:lle sekä samalla käytännönläheinen työnäyte agenttisesta ohjelmistokehityksestä ja pilvijulkaisusta.
+          <br><br>Projekti on vielä aloitus - kehitysvaiheessa, ja lopullinen versio julkaistaan myöhemmin.
+          Tämän dokumentin tarkoitus on kuvata projektin arkkitehtuuri, kehityspolku ja hyväksyntäkriteerit.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Overview Card -->
+    <section class="card highlight-gold hero-highlight-card hero-highlight-card--project">
+      <div class="hero-highlight-card-content">
+        
+        <div class="sub-header">Tulevaisuuden CashSense ennustaa mitä yrityksen taloudelle tapahtuu ja miksi</div>
+        <h3>Tulevaisuuden AI-FEATURET</h3>
+
+        <ul class="body-text2">
+          <li>
+            <strong>AI-myyntiennuste</strong>
+            <p>Ennustaa tulevaa myyntiä historiadatan ja trendien perusteella.</p>
+          </li>
+          <li>
+            <strong>AI-makrotalousennuste</strong>
+            <p>Ennustaa makrotalouden kehitystä ja sen vaikutusta yrityksen myyntiin ja kassavirtaan.</p>
+          </li>
+          <li>
+            <strong>AI-skenaariot</strong>
+            <p>Muodostaa vaihtoehtoisia myynti- ja kassavirtanäkymiä eri taloustilanteissa.</p>
+          </li>
+          <li>
+            <strong>AI-käyttöpääomaennuste</strong>
+            <p>Ennustaa tulevaa käyttöpääoman tarvetta.</p>
+          </li>
+          <li>
+            <strong>AI-luottotappioennuste</strong>
+            <p>Ennustaa tulevia luottotappioita myynti- ja maksukäyttäytymisen perusteella.</p>
+          </li>
+          <li>
+            <strong>AI-ennusteen jatkuva oppiminen</strong>
+            <p>Vertaa ennusteita toteutuneeseen kehitykseen ja parantaa mallia uuden datan perusteella.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 1 & 2: Tavoitteet & Rajaus -->
+    <section class="dashboard-grid dashboard-grid--spaced">
+      <div class="card">
+        <div class="card-title">1. Projektin tavoite</div>
+        <p class="body-text mb-1">
+          Perinteinen kassavirtaennuste olettaa usein, että lasku maksetaan eräpäivänä. CashSense parantaa ennustetta ottamalla huomioon kaksi keskeistä tekijää:
+        </p>
+        <ul class="content-list">
+          <li><strong>1.1 Asiakkaan maksukäyttäytyminen:</strong> Historialliset viiveet huomioidaan asiakaskohtaisesti arvioidussa maksupäivässä.</li>
+          <li><strong>1.2 Toimialan makrotaloudellinen kehitys:</strong> Toimialan suhdanne-ennusteet (StatFin) korjaavat maksuaikojen venymistä.</li>
+        </ul>
+      </div>
+
+      <div class="card highlight-gold">
+        <div class="card-title">2. Tärkeä rajaus</div>
+        <p class="body-text mb-1">
+        DEMO 1.0 <strong>ei käytä tekoälyä itse sovelluksessa</strong>. Claude Codea käytetään projektin suunnitteluun, koodaukseen, testaamiseen ja dokumentointiin.
+        </p>
+        <p class="body-text--small">
+          Itse sovellus perustuu Python-laskentaan ja tilastolliseen analyysiin. StatFin-dataan ja FastAPI-rajapintaan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Architecture (HTML/CSS Flexbox) -->
+    <section class="card card--bottom-spacing">
+      <div class="card-title">3. Demo 1.0 arkkitehtuuri</div>
+
+      <div class="arch-diagram">
+
+        <!-- Internet -->
+        <div class="arch-endpoint-box">
+          INTERNET
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <!-- Azure VM Box -->
+        <div class="arch-vm-box">
+          <div class="arch-vm-header">
+            Azure VM (Ubuntu Linux)
+          </div>
+
+          <div class="arch-vm-inner">
+            <div class="arch-vm-component">
+              <strong>Nginx</strong> <span class="port-label">(Port 80 / 443)</span>
+            </div>
+
+            <div class="arch-arrow--subtle">↓</div>
+
+            <div class="arch-vm-component">
+              <strong>FastAPI</strong> <span class="port-label">(Port 8000)</span>
+            </div>
+
+            <div class="arch-arrow--subtle">↓</div>
+
+            <div class="arch-vm-component--engine">
+              CashSense Engine
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <!-- StatFin API -->
+        <div class="arch-endpoint-box">
+          StatFin API (Tilastokeskus)
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 4 & 5: Teknologiat & Hakemistorakenne -->
+    <section class="dashboard-grid dashboard-grid--spaced">
+      <div class="card">
+        <div class="card-title">4. Teknologiat</div>
+        <div class="tech-list">
+          <div><strong>Backend:</strong> Python 3.11+, FastAPI, Pandas, NumPy, Requests, Pydantic</div>
+          <div><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), Plotly.js</div>
+          <div><strong>Data:</strong> CSV, Pandas, StatFin API</div>
+          <div><strong>Palvelin &amp; CI/CD:</strong> Azure VM (Ubuntu), Nginx, systemd, GitHub Actions</div>
+          <div><strong>Kehitystyökalut:</strong> Claude Code (suunnittelu, koodaus, testaus ja dokumentointi)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">5. Projektin Hakemistorakenne</div>
+        <pre class="arch-pre">
+cashsense/
+├── app/
+│   ├── api/          # FastAPI reitit
+│   ├── engine/       # Kassavirta- &amp; makrolaskenta
+│   ├── data/         # StatFin integraatio
+│   └── models/       # Pydantic schemas
+├── frontend/         # HTML/CSS/JS UI
+├── data/             # Synteettinen laskutusdata
+├── tests/            # Automaattiset testit
+└── docs/             # Arkkitehtuuridokumentaatio
+        </pre>
+      </div>
+    </section>
+
+    <!-- Section 7-27: Kehityspolku & Vaiheet -->
+    <section class="card card--bottom-spacing">
+      <div class="card-title">Lopullinen Kehityspolku (Vaiheet 0–18)</div>
+      <div class="dev-steps-grid">
+        <div class="dev-step-box"><strong>01</strong> GitHub Repository</div>
+        <div class="dev-step-box"><strong>02</strong> Projektirakenne</div>
+        <div class="dev-step-box"><strong>03</strong> Synteettinen Data</div>
+        <div class="dev-step-box"><strong>04</strong> Behavioral Analytics</div>
+        <div class="dev-step-box"><strong>05</strong> Perinteinen Ennuste</div>
+        <div class="dev-step-box"><strong>06</strong> Behavioral Forecast</div>
+        <div class="dev-step-box"><strong>07</strong> StatFin API -integraatio</div>
+        <div class="dev-step-box"><strong>08</strong> Macro Analytics</div>
+        <div class="dev-step-box"><strong>09</strong> Forecast Engine</div>
+        <div class="dev-step-box"><strong>10</strong> FastAPI Rajapinta</div>
+        <div class="dev-step-box"><strong>11</strong> Frontend &amp; Dashboard</div>
+        <div class="dev-step-box"><strong>12</strong> Automaattiset Testit</div>
+        <div class="dev-step-box"><strong>13</strong> GitHub Actions CI</div>
+        <div class="dev-step-box"><strong>14</strong> Azure VM Ubuntu</div>
+        <div class="dev-step-box"><strong>15</strong> Nginx Reverse Proxy</div>
+        <div class="dev-step-box"><strong>16</strong> systemd -palvelut</div>
+        <div class="dev-step-box"><strong>17</strong> HTTPS-suojaus</div>
+        <div class="dev-step-box"><strong>18</strong> Dokumentaatio</div>
+      </div>
+    </section>
+
+    <!-- Section 28: Definition of Done Table -->
+    <section class="card card--bottom-spacing-xl">
+      <div class="card-title">28. Definition of Done – Hyväksyntäkriteerit</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Kriteeri</th>
+            <th>Kuvaus</th>
+            <th>Tila</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-cell--emphasis">GitHub Repository &amp; CI</td>
+            <td>Koodikanta hallittu Gitillä, GitHub Actions ajaa automaattitestit.</td>
+            <td><span class="stat-badge badge-gold">Kesken</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell--emphasis">Laskentamoottori (Engine)</td>
+            <td>Yhdistää perinteisen, käyttäytymispohjaisen ja StatFin-makroennusteen.</td>
+            <td><span class="stat-badge badge-gold">Kesken</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell--emphasis">FastAPI &amp; Frontend</td>
+            <td>REST API syöttää reaaliaikaista dataa selaimen käyttöliittymälle ja graafeille.</td>
+            <td><span class="stat-badge badge-gold">Kesken</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell--emphasis">Pilvijulkaisu (Azure VM)</td>
+            <td>Nginx, systemd ja HTTPS varmistavat jatkuvan ja turvallisen tuotantoajon.</td>
+            <td><span class="stat-badge badge-gold">Kesken</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section 29: Azure Resource Group -->
+    <section class="card card--bottom-spacing-xl">
+      <div class="card-title">29. Azure Resource Group – Infrastruktuuri</div>
+
+      <p class="body-text mb-1-25">
+        Projektin tässä vaiheessa Azure-ympäristö on pystytetty <code>cashsense_rg</code> -resurssiryhmään <strong>Sweden Central</strong> -alueelle (Azure for Students -tilauksella, ilmaiset creditit).
+        <br>Ympäristö sisältää sovelluksen ajoon ja verkkoyhteyksiin tarvittavan infrastruktuurin:
+      </p>
+
+      <ul class="content-list mb-1">
+        <li><strong>cashsense-vm:</strong> Virtuaalipalvelin (Ubuntu Linux), jolla Nginx ja FastAPI-sovellus ajetaan.</li>
+        <li><strong>cashsense-vm-ip:</strong> Julkinen IP-osoite ulkoista liikennettä varten.</li>
+        <li><strong>cashsense-vm-nsg:</strong> Verkkoturvaryhmä (NSG), joka suodattaa saapuvan liikennettä (SSH/HTTP/HTTPS).</li>
+        <li><strong>vnet-swedencentral-1 &amp; cashsense-vm256:</strong> Virtuaaliverkko ja verkkokortti (NIC).</li>
+        <li><strong>cashsense-vm_key:</strong> SSH-avain turvalliseen etähallintaan.</li>
+        <li><strong>cashsense-vm_OsDisk_...:</strong> Virtuaalikoneen OS-levymuisti.</li>
+      </ul>
+
+      <div class="arch-image-wrapper">
+        <img src="assets/images/cashsense_rg.png" alt="Azure Resource Group - cashsense_rg" class="arch-image">
+      </div>
+    </section>
+
+    <!-- Section 30: CashSense VM -ensivalmistelut -->
+    <section class="card card--bottom-spacing-xl">
+      <div class="card-title">30. CashSense VM – Ensivalmistelut</div>
+
+  
+      <p class="body-text mb-1">
+        Azure VM valmisteltiin ennen varsinaisen CashSense-sovelluksen käyttöönottoa. Tämä dokumentti kuvaa valmistuksen eri vaiheet.
+      </p>
+
+      <!-- 1. Azure-ympäristö -->
+      <div class="card">
+        <div class="card-title">1. Azure-demoympäristö</div>
+        <ul class="content-list">
+          <li><strong>Azure for Students -tili</strong> – käytetty ilmaisten etusitinten saantiin.</li>
+          <li><strong>Alue:</strong> Sweden Central (Azure for Students -politiikka ei sallinut North Europe -aluetta).</li>
+          <li><strong>Resource Group:</strong> cashsense-rg-se</li>
+          <li><strong>VM:</strong> cashsense-vm</li>
+          <li><strong>Käyttöjärjestelmä:</strong> Ubuntu Server 24.04 LTS</li>
+          <li><strong>Arkkitehtuuri:</strong> x64 Gen2</li>
+          <li><strong>VM-koko:</strong> Standard_B2ts_v2 – 2 vCPU, 1 GiB RAM, Standard SSD</li>
+          <li><strong>Verkko:</strong> Public IP, NSG käytössä, SSH-avainautentikointi.</li>
+        </ul>
+      </div>
+
+      <!-- 2. SSH-yhteys -->
+      <div class="card">
+        <div class="card-title">2. SSH-yhteys</div>
+        <p class="body-text mb-1">
+          SSH-yhteys Windows-koneelta VM:lle saatiin toimimaan seuraavilla asetuksilla:
+        </p>
+        <ul class="content-list">
+          <li><strong>Käyttäjä:</strong> ADcashsense</li>
+          <li><strong>Avain:</strong> .pem-avain Windowsin tiedostojärjestelmään</li>
+          <li><strong>Oikeudet:</strong> Windowsin avaimen käyttöoikeudet korjattiin <code>icacls</code>-komennolla.</li>
+        </ul>
+        <p class="body-text">
+          Yhteys toimii komennolla:
+        </p>
+        <pre class="arch-pre">ssh -i "F:..\nimi_key.pem" adminkäyttäjä@&lt;IP&gt;</pre>
+      </div>
+
+      <!-- 3. Ubuntu päivitettiin -->
+      <div class="card">
+        <div class="card-title">3. Ubuntu päivitetty</div>
+        <p class="body-text mb-1">
+          Alkuvalmisukset tarkistettiin ja järjestelmä päivitettiin:
+        </p>
+        <pre class="arch-pre">Ubuntu 24.04.4 LTS
+        Python 3.12.3
+        Git 2.43.0
+        Python venv</pre>
+        <p class="body-text">
+          Päivitys suoritettiin komennoilla <code>sudo apt update</code> ja <code>sudo apt upgrade -y</code>.
+          Azure-kernelin päivityksen jälkeen VM käynnistettiin uudelleen ja SSH-yhteys varmistettiin uudelleen.
+        </p>
+      </div>
+
+      <!-- 4. CashSense-hakemisto -->
+      <div class="card">
+        <div class="card-title">4. CashSense-hakemisto</div>
+        <pre class="arch-pre">mkdir -p ~/cashsense</pre>
+        <p class="body-text">
+          Sijainti: <code>/home/ADcashsense/cashsense</code>. Hakemiston omistajuus tarkistettiin ja se on käyttäjän ADcashsense hallinnassa.
+        </p>
+      </div>
+
+      <!-- 5. UFW-palomuuri -->
+      <div class="card">
+        <div class="card-title">5. UFW-palomuuri</div>
+        <pre class="arch-pre">sudo ufw allow OpenSSH
+        sudo ufw enable</pre>
+        <p class="body-text">
+          Tällä hetkellä sallittu liikenne on vain <code>OpenSSH</code> (portti 22). Portteja 80 ja 443 ei vielä avattu.
+        </p>
+      </div>
+
+      <!-- 6. Fail2ban -->
+      <div class="card">
+        <div class="card-title">6. Fail2ban</div>
+        <pre class="arch-pre">sudo apt install -y fail2ban</pre>
+        <p class="body-text">
+          Palvelun tila on <strong>active (running)</strong>. Fail2ban suojelee esimerkiksi SSH-palvelua kirjautumisyrityksiltä.
+        </p>
+      </div>
+
+      <!-- 7. Nginx -->
+      <div class="card">
+        <div class="card-title">7. Nginx</div>
+        <pre class="arch-pre">sudo apt install -y nginx</pre>
+
+        <p class="body-text">Nginx on asennettu ja käynnissä (<strong>active (running)</strong>). Sitä ei vielä konfiguroitu CashSensea varten.<br></p>
+        <br><br>
+
+
+        <!-- Suunniteltu lopullinen rakenne -->
+        <div class="arch-diagram">
+          <div class="arch-endpoint-box">Internet</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-vm-component">HTTPS :443</div>
+          <div class="arch-arrow--subtle">↓</div>
+          <div class="arch-vm-component">Nginx</div>
+          <div class="arch-arrow--subtle">↓</div>
+          <div class="arch-vm-component">
+            <strong>FastAPI</strong> <span class="port-label">(Port :8000, vain localhost)</span>
+          </div>
+          <div class="arch-arrow--subtle">↓</div>
+          <div class="arch-vm-component--engine">CashSense Engine</div>
+          <div class="arch-arrow--subtle">↓</div>
+          <div class="arch-endpoint-box">StatFin API</div>
+        </div>
+
+        <p class="body-text mt-1"><br>
+          FastAPI-porttia 8000 ei ole tarkoitus avata Internetiin. Silloin myös <code>/api/</code>-reitit Nginxin kautta.
+        </p>
+      </div>
+
+      <!-- 8. HTTPS-suunnitelma -->
+      <div class="card">
+        <div class="card-title">8. HTTPS-suunnitelma</div>
+        <p class="body-text mb-1">
+          Julkaistussa CashSense-palvelussa käytetään HTTPS:ää Nginxin ja Let's Encrypt -sertifikaatin yhteydessä. (portit ei avoinna vielä)
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Portti</th>
+              <th>Käyttö</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-cell--emphasis">22</td>
+              <td>SSH</td>
+            </tr>
+            <tr>
+              <td class="table-cell--emphasis">80</td>
+              <td>HTTP ↝ HTTPS -ohjaus</td>
+            </tr>
+            <tr>
+              <td class="table-cell--emphasis">443</td>
+              <td>HTTPS / Nginx</td>
+            </tr>
+            <tr>
+              <td class="table-cell--emphasis">8000</td>
+              <td>FastAPI, vain localhost</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 9. Mitä EI vielä tehty -->
+      <div class="card">
+        <div class="card-title">9. Mitä EI vielä tehty</div>
+        <p class="body-text mb-1">
+          Tärkeää: CashSense-sovellusta ei ole vielä asennettu VM:lle.
+        </p>
+        <ul class="content-list">
+          <li>FastAPI-sovellusta</li>
+          <li>Python virtual environmentia CashSensea varten</li>
+          <li><code>requirements.txt</code>-asennusta</li>
+          <li>systemd-palvelua</li>
+          <li>Nginx CashSense-konfiguraatiota</li>
+          <li>domainia / DNS:ää</li>
+          <li>HTTPS-sertifikaattia</li>
+          <li>Azure-porttien 80/443 avaamista</li>
+          <li>GitHub Actions -deploymentia</li>
+          <li>Dockeria (eikä tehdä demo 1.0 VM ympäristössä)</li>
+        </ul>
+      </div>
+
+      <!-- Nykyinen tila -->
+      <div class="arch-vm-box">
+        <div class="arch-vm-header">Nykyinen tila</div>
+        <div class="arch-vm-inner">
+          <div class="arch-vm-component--engine">
+            Azure VM<br>
+            Ubuntu 24.04 ✓<br>
+            ├── Python 3.12 ✓<br>
+            ├── Git ✓<br>
+            ├── SSH ✓<br>
+            ├── UFW ✓<br>
+            ├── Fail2ban ✓<br>
+            ├── Nginx ✓<br>
+            └── ~/cashsense ✓
+          </div>
+        </div>
+      </div>
+
+      <p class="body-text mt-1">
+        Seuraava vaihe on CashSensen rakentaminen paikallisesti, jonka jälkeen sovellus siirretään Gitin kautta VM:lle.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <p>CashSENSE ™ – Capital Intelligence &copy; 2026 Mikko Pohjola. All rights reserved. Demonstration use only.</p>
+  </footer>
+
+</body>
+</html>
